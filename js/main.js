@@ -1,65 +1,100 @@
 'use strict'
 
-//declare variables
-
-var locationName;
-var avgMin;
-var avgMax;
-var avgNutsPer;
-var sumTotal;
-
-
 //constructor
-var DonutShop = function(locationName, avgMin, avgMax, avgNutsPer){
-	this.locationName = locationName;
-	this.avgMin = avgMin;
-	this.avgMax = avgMax;
-	this.avgNutsPer = avgNutsPer;
-}
+var DonutShop = function(location, minCustHr, maxCustHr, avgSalesHr){
+	this.location = location;
+	this.minCustHr = minCustHr;
+	this.maxCustHr = maxCustHr;
+	this.avgSalesHr = avgSalesHr;
+};
 
-DonutShop.prototype.randNumCustomers = function(avgMin, avgMax){
-	return Math.floor(Math.random() * (this.avgMax - this.avgMin + 1)) + this.avgMin;
-}
 
-DonutShop.prototype.calcSales = function(){
-	//code to calculate sales in an hour here
-	var randomizedSales = this.randNumCustomers(this.avgMin, this.avgMax);
-	return this.avgNutsPer * randomizedSales;
-}
+DonutShop.prototype.randomGenerator = function(){
+	return (Math.floor((Math.random() * (this.maxCustHr - this.minCustHr + 1) + this.minCustHr)));
+};
 
-DonutShop.prototype.sumTotals = function(){
-	//code to calculate total sum sales will go here, haven't really fleshed that out yet.
-	var sumTotal = sumTotal + this.calcSales();
-	return sumTotal; 
-}
+DonutShop.prototype.salesCalculator = function(){
+	this.salesHourly = [];
+	this.salesDaily = 0;
 
-DonutShop.prototype.addExistingShops = function(){
-	//code to add pre existing shops to table
-	var shopTable = document.getElementById('shop-table');
+	for(var x = 0; x < 11; x++){
+		this.salesHourly[x] =  Math.floor(this.randomGenerator() * this.avgSalesHr);
+		this.salesDaily += this.salesHourly[x];
+	};
+};
+
+//code adopted from demonstration and code review in this mornings class 8/11
+DonutShop.prototype.render = function(){
+	var shopsTable = document.getElementById('shop-table');
 	var newTR = document.createElement('tr');
-	var addTR = shopTable.appendChild(newTR);
-	var newTD = document.createElement('td');
-	var addTD = newTR.appendChild(newTD);
-}
+	newTR.id = this.location;
+	newTR.innerHTML = this.location;
+	shopsTable.appendChild(newTR);
+	this.salesCalculator();
 
-DonutShop.prototype.receiveLocationForm = function(){
-	//code for a method to receive data from the input form
-}
+		for (var y = 0; y < 11; y++){
+			var newTD = document.createElement('td');
+			newTD.innerHTML = this.salesHourly[y];
+			newTR.appendChild(newTD);
+		};
 
-DonutShop.prototype.addNewShops = function(){
-	//code to add new shop based on info processed in receiveLocationForm method
-}
+			var newTD = document.createElement('td');
+			newTD.innerHTML = this.salesDaily;
+			newTR.appendChild(newTD);
+};
 
+var addAllTheThings = function(){
 
+	var shopsTable = document.getElementById('shop-table');
 
-//instances
-var downTown = new DonutShop("Downtown", 8, 43, 4.50);
-var capitolHill = new DonutShop("Capital Hill", 4, 37, 2.00);
-var southLakeUnion = new DonutShop("South Lake Union", 9, 23, 6.33);
-var Wedgewood = new DonutShop("Wedgewood", 2, 28, 1.25);
-var Ballard = new DonutShop("Ballard", 8, 58, 3.75);
+		var tableHead = ['Donut Shop', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', 'Total'];
+		var tableHeadRow = document.createElement('tr');
+		shopsTable.appendChild(tableHeadRow);
 
+			for (var z = 0; z < 13; z++){
+				var headTD = document.createElement('td');
+				headTD.innerHTML = tableHead[z];
+				tableHeadRow.appendChild(headTD);
+			};
 
-//DOM access
+				for(var k = 0; k < shopsArray.length; k++){
+					shopsArray[k].render();
+				}
 
-downTown.addExistingShops();
+};
+
+//saves the information from new donut shop made from form information and adds it to Donut Shops table
+var saveSubmisson = function(){
+	var inputLocation = document.getElementById('inputLocation').value;
+	var inputMin = document.getElementById('inputMin').value;
+	var inputMax = document.getElementById('inputMax').value;
+	var inputAvg = document.getElementById('inputAvg').value;
+
+	var newShop = newDonutShop(inputLocation, inputMin, inputMax, inputAvg);
+
+	shopsArray.push(newShop);
+	newShop.render();
+
+		for( var v = 0; v < shopsArray.length-1; v++){
+			if(newShop.location === shopsArray[v].location){
+				shopsArray[v] = newShop;
+				addAllTheThings();
+			}
+		}
+};
+
+//new Donut Shop based on information in submitted form from html page
+var newDonutShop = function(inputLocation, inputMin, inputMax, inputAvg){
+	var submittedDonutShop = new DonutShop(inputLocation, inputMin, inputMax, inputAvg);
+	return submittedDonutShop;
+};
+
+var newShopForm = document.getElementById('submitButton');
+newShopForm.addEventListener('click', saveSubmisson);
+var downTown = new DonutShop('Downtown', 8, 43, 4.5);
+var capitolHill = new DonutShop('Capitol Hill', 4, 37, 2);
+var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
+var wedgewood = new DonutShop('Wedgewood', 2, 28, 1.25);
+var ballard = new DonutShop('Ballard', 8, 58, 3.75);
+var shopsArray = [downTown, capitolHill, southLakeUnion, wedgewood, ballard];
+addAllTheThings();
