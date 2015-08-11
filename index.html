@@ -9,23 +9,24 @@
 	'fhalma Chaugnar Faugn nauh'e ngkn'a mg Yoggoth gothaor sgn'wahl 'ai, ph'Shub-Niggurath h'sgn'wahl h'n'ghft Chaugnar Faugn kn'a vulgtm ngllll, sgn'wahl r'luh f'gof'nn Cthulhu csll'ha lloig r'luh. 
 	Azathothyar hlirgh ph'mnahn' s'uhn, mnahn'agl y'hah. </p>
 	<table id='shop-table'>
-		<tr>
-			<th>Location(s)</th>
-			<th>7am</th>
-			<th>8am</th>
-			<th>9am</th>
-			<th>10am</th>
-			<th>11am</th>
-			<th>12pm</th>
-			<th>1pm</th>
-			<th>2pm</th>
-			<th>3pm</th>
-			<th>4pm</th>
-			<th>5pm</th>
-			<th>6pm</th>
-			<th>Total</th>
-		</tr>
 	</table>
+
+	<h3>Add your own Top Pot locations!</h3>
+	<form id="newShopForm">
+		<label for='location'>Locaton: </label>
+		<label for='min'>Minimum Customers per Hour: </label>
+		<label for='max'>Maximum Customers per Hour: </label>
+		<label for='avg'>Average Donut Sales per Hour: </label>
+		<br/>
+		<input type = 'text' id = 'inputLocation' placeholder = 'Location' required = true></input>
+		<input type = 'text' id = 'inputMin' placeholder = 'Minimum' required = true></input>
+		<input type = 'text' id = 'inputMax' placeholder = 'Maximum' required = true></input>
+		<input type = 'text' id = 'inputAvg' placeholder = 'Average' required = true></input>
+		<br/>
+		<button type = 'button' id = 'submitButton'>Submit</button>
+
+	</form>
+
 </body>
 <script src="js/main.js"></script>
 </html>
