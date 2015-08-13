@@ -24,6 +24,7 @@ DonutShop.prototype.salesCalculator = function(){
 };
 
 //code adopted from demonstration and code review in this mornings class 8/11
+//just renders the object that calls this method
 DonutShop.prototype.render = function(){
 	var shopsTable = document.getElementById('shop-table');
 	var newTR = document.createElement('tr');
@@ -43,9 +44,14 @@ DonutShop.prototype.render = function(){
 			newTR.appendChild(newTD);
 };
 
+//adds or "renders" all the objects to a table when called, as opposed to just rendering one object
 var addAllTheThings = function(){
 
 	var shopsTable = document.getElementById('shop-table');
+
+	while (shopsTable.firstChild) { //while the table already exists
+    	shopsTable.removeChild(shopsTable.firstChild) //removes the table so that we don't end up with multiple tables
+  	};
 
 		var tableHead = ['Donut Shop', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', 'Total'];
 		var tableHeadRow = document.createElement('tr');
