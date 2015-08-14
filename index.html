@@ -6,8 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<h1>Top Pot Donut Shop</h1>
-	<p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Geb sgn'wahlnyth, Cthulhuoth y-lloig hupadgh fm'latgh nasgn'wahl s'uhn kn'a, chai cehye y-shagg ah ngorr'e li'hee. 
+	
+
+	<div id="row1">
+	<h1 id="title1">Top Pot Donut Shop</h1>
+	<img id="logo1" src="img/logo.jpeg" alt="Top Pot Donut's" height="150" width="150"></img>
+	</div>
+	
+
+	<p id="intro1">Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Geb sgn'wahlnyth, Cthulhuoth y-lloig hupadgh fm'latgh nasgn'wahl s'uhn kn'a, chai cehye y-shagg ah ngorr'e li'hee. 
 	'fhalma Chaugnar Faugn nauh'e ngkn'a mg Yoggoth gothaor sgn'wahl 'ai, ph'Shub-Niggurath h'sgn'wahl h'n'ghft Chaugnar Faugn kn'a vulgtm ngllll, sgn'wahl r'luh f'gof'nn Cthulhu csll'ha lloig r'luh. 
 	Azathothyar hlirgh ph'mnahn' s'uhn, mnahn'agl y'hah. </p>
 	<table id='shop-table'>
@@ -15,11 +22,6 @@
 
 	<h3>Add your own Top Pot locations!</h3>
 	<form id="newShopForm">
-		<label for='location'>Locaton: </label>
-		<label for='min'>Minimum Customers per Hour: </label>
-		<label for='max'>Maximum Customers per Hour: </label>
-		<label for='avg'>Average Donut Sales per Hour: </label>
-		<br/>
 		<input type = 'text' id = 'inputLocation' placeholder = 'Location' required = true></input>
 		<input type = 'text' id = 'inputMin' placeholder = 'Minimum' required = true></input>
 		<input type = 'text' id = 'inputMax' placeholder = 'Maximum' required = true></input>
@@ -28,6 +30,15 @@
 		<button type = 'button' id = 'submitButton'>Submit</button>
 	</form>
 
+	<div id="imgLinks">
+	<table>
+		<tr>
+			<td></td><td></td><td></td><td></td>
+		</tr>
+	</table>
+	</div>
+
+<div id="footer1"><p></p></div>
 </body>
 <script src="js/main.js"></script>
 </html>
