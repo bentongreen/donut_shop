@@ -84,6 +84,8 @@ var saveSubmisson = function(){
 		for( var v = 0; v < shopsArray.length-1; v++){
 			if(newShop.location === shopsArray[v].location){
 				shopsArray[v] = newShop;
+				//Added splice to make additions of existing shops update table instead of creating duplicates
+				shopsArray.splice(-1,1);
 				addAllTheThings();
 			}
 		}
