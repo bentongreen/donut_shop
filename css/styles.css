@@ -1,70 +1,110 @@
 /* Adobe Kuler Buoy Color Scheme: 1B2B32 37646F A3ABAF E1E7E8 B22E2F */
-
-#row1{
-	min-height: 15%;
-	margin-bottom: 5%;
-	width: 90%;
-	height: 50px;
+@import url(http://fonts.googleapis.com/css?family=Arimo:700);
+#shop-table{
+margin: 2%;
+border: 1px solid black;
 }
 
-#title1{
-	margin-left: 5%;
-	float: left;
-	font-size: 45px;
-	position: absolute;
+#shop-table td{
+	border: 1px solid black;
 }
 
-#navbar1{
-	min-width: 40%;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-    padding-top: 10%;
-    position: relative;
-
- }
-
-#intro1{
-	margin:5%;
-	margin-top:10%;
-	margin-left: 2%;
-	max-width: 80%;
+#shop-table tr{
+	border: 1px solid black;
 }
 
-#logo1{
-	position: fixed;
-	top: 5px;
-	right: 30px;
-	border: 7px solid black;
-	margin-bottom: 10%;
-
-}
-
-#footer1{
-
-}
-
-#imgLinks{
-
+#newShopFormTitle{
+margin: 2%;
 }
 
 #newShopForm{
-	border-width: 3px;
-	border-style: dashed;
-	border-radius: 8px;
-	border-color: #37646F;
-	max-width: 10%;
-	top: -10%;
+margin: 2%;
+margin-top: -1%;
 }
 
-#shop-table{
-	border-radius: 8px;
-	border-width: 3px;
-	border-style: solid;
-	border-color: #37646F;
-	position: relative;
-	left: 30%;
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#headerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#header {
+    height: 75px;
+    background: #37646F;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 5px;
+    font-size: 5em;
+}
+
+#navigationwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#navigation {
+    height: 30px;
+    background: #37646F;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 5px;
+    padding-top: 15px;
+}
+
+#navigation td{
+	padding-right:25px;
+	padding-left: 5px;
+}
+
+#contentwrap {
+    width: 700px;
+    float: left;
+    margin: 0 auto;
+}
+
+#content {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 5px;
+    padding: 2px;
+    width: auto;
+    max-width: 900px;
+}
+
+#rightcolumnwrap {
+    width: auto;
+    max-width: 250px;
+    float: left;
+    margin: 0 auto;
+}
+
+#rightcolumn {
+    background: #37646F;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 5px;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: auto;
+    background: #37646F;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 5px;
 }
 
 body {
@@ -79,4 +119,56 @@ h1{
 
 h3{
 	color: #1B2B32;
+}
+
+#footerwrap2 {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer2 {
+    height: auto;
+    padding-top:5px;
+    min-height: 140px;
+    background: #37646F;
+    border-radius: 10px;
+    border: 3px solid #1B2B32;
+    margin: 10px;
+}
+
+
+/*---------------------------------------Codepen Animation CSS by Paul Murphy, 3D Flip Box----------------------------*/
+
+.cube {
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  font-family: 'Sigmar One', cursive;
+  font-size: 32px;
+  line-height: 100px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  transition: transform .33s;
+  transform-style: preserve-3d;
+}
+
+.cube:hover {
+	transform: rotateX(90deg);
+}
+
+.front, .bottom {
+  height: 100px;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+
+.bottom {
+  background: darken(#28ebff, 10%);
+  transform: rotateX(-90deg) translateZ(-50px);
+  font-size: .5em;
 }

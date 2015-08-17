@@ -2,25 +2,37 @@
 <html>
 <head>
 	<title>Top Pot Donut Shop</title>
+	<link href='css/eric-meyer-reset.css' type='text/css' rel='stylesheet'>
 	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	
-
-	<div id="row1">
-	<h1 id="title1">Top Pot Donut Shop</h1>
-	<img id="logo1" src="img/logo.jpeg" alt="Top Pot Donut's" height="150" width="150"></img>
-	</div>
-	
-
+	 <div id="wrapper">
+        <div id="headerwrap">
+		<div id="header"><h1>Top Pot Donut Shop</h1></div>
+	 	</div>
+	 			<div id="navigationwrap">
+        		<div id="navigation">
+            	<table>
+            		<tr>
+            			<td><a href="www.google.com">Home</a>
+            				<td><a href="www.google.com">About</a>
+            					<td><a href="www.google.com">Contact Us</a>
+            		</tr>
+            	</table>
+        		</div>
+        		</div>
+    <div id="contentwrap">
+    <div id="content">
 	<p id="intro1">Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Geb sgn'wahlnyth, Cthulhuoth y-lloig hupadgh fm'latgh nasgn'wahl s'uhn kn'a, chai cehye y-shagg ah ngorr'e li'hee. 
 	'fhalma Chaugnar Faugn nauh'e ngkn'a mg Yoggoth gothaor sgn'wahl 'ai, ph'Shub-Niggurath h'sgn'wahl h'n'ghft Chaugnar Faugn kn'a vulgtm ngllll, sgn'wahl r'luh f'gof'nn Cthulhu csll'ha lloig r'luh. 
 	Azathothyar hlirgh ph'mnahn' s'uhn, mnahn'agl y'hah. </p>
-	<table id='shop-table'>
-	</table>
-
-	<h3>Add your own Top Pot locations!</h3>
+	</div>
+	</div>
+	
+	<div id="rightcolumnwrap">
+    <div id="rightcolumn">
+	<h3 id='newShopFormTitle'>Add your own Top Pot locations!</h3>
 	<form id="newShopForm">
 		<input type = 'text' id = 'inputLocation' placeholder = 'Location' required = true></input>
 		<input type = 'text' id = 'inputMin' placeholder = 'Minimum' required = true></input>
@@ -29,16 +41,63 @@
 		<br/>
 		<button type = 'button' id = 'submitButton'>Submit</button>
 	</form>
-
-	<div id="imgLinks">
-	<table>
-		<tr>
-			<td></td><td></td><td></td><td></td>
-		</tr>
-	</table>
+	</div>
 	</div>
 
-<div id="footer1"><p></p></div>
+	 <div id="footerwrap">
+        <div id="footer">
+		<table id='shop-table'>
+	</table>
+	</div>
+    </div>
+
+
+<div id="footerwrap2">
+<div id="footer2">
+<table><tr>
+
+	<td>
+	<div class="cube">
+	<div class="front">
+	<img src="img/glazed-old-fashion.png" style="width:130px; height:130px;">
+	</div>
+	<div class="bottom">
+	<p>Glazed Old Fashion</p>
+	</div>
+	</div>
+	</td>
+			<td>
+			<div class="cube">
+			<div class="front">
+			<img src="img/blueberry-fritter.jpg" style="width:130px; height:130px;">
+			</div>
+			<div class="bottom">
+			<p>Blueberry Fritter</p>
+			</div>
+			</div>
+			</td>
+				<td>
+				<div class="cube">
+				<div class="front">
+				<img src="img/apple-fritter.jpg" style="width:130px; height:130px;">
+				</div>
+				<div class="bottom">
+				<p>Apple Fritter</p>
+				</div>
+				</div>
+				</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
 </body>
 <script src="js/main.js"></script>
 </html>
